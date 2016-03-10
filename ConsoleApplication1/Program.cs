@@ -1,12 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ConsoleApplication1{
+namespace DavidMath{
     class Program{
         static void Main(string[] args){
             Console.WriteLine("Enter a number :");
             int a = Int32.Parse(Console.ReadLine());
-            List<int> holder = DavidMath.Prime.primeFactors(a);
+
+            Console.WriteLine(Recursion.fibonacci(a));
+
+            Console.ReadKey();
+
+            List<int> holder = Prime.primeFactors(a);
 
             Console.WriteLine("The Prime Factors of " + a + " are:");
 
@@ -19,7 +24,7 @@ namespace ConsoleApplication1{
             a = Int32.Parse(Console.ReadLine());
             holder = new List<int>();
             for(int b = 0; b <= a; b++){
-                List<int> holderTemp = DavidMath.Collatz.collatzList(b);
+                List<int> holderTemp = Collatz.collatzList(b);
                 if(holderTemp.Count > holder.Count){
                     holder = holderTemp;
                 }
