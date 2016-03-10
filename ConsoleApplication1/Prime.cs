@@ -53,7 +53,7 @@ namespace DavidMath
                     {
                         holder.Add(x);
                         holder.AddRange(primeFactors(a/ x));
-                        break;
+                        break; //only try to find the first factor, avoid duplicates.
                     }
                 }
             }
