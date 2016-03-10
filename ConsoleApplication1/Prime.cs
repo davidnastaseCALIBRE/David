@@ -1,4 +1,7 @@
-﻿namespace DavidMath
+﻿using System;
+using System.Collections.Generic;
+
+namespace DavidMath
 {
     public class Prime
     {
@@ -32,6 +35,30 @@
                 return isPrime(a - 2) || isPrime(a + 2);
             }
             return false;
+        }
+
+        public static List<int> primeFactors(int a)
+        {
+            List<int> holder = new List<int>();
+
+            if (isPrime(a))
+            {
+                holder.Add(a);
+            }
+            else
+            {
+                for(int x = 2; x < a; x++)
+                {
+                    if(a % x == 0 && isPrime(x))
+                    {
+                        holder.Add(x);
+                        holder.AddRange(primeFactors(a/ x));
+                        break;
+                    }
+                }
+            }
+
+            return holder;
         }
     }
 }
