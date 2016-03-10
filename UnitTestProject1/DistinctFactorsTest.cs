@@ -1,14 +1,11 @@
 ﻿using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTestProject1
-{
+namespace UnitTestProject1{
     [TestClass]
-    public class DistinctFactorTest
-    {
+    public class DistinctFactorTest{
         [TestMethod]
-        public void is0or1()
-        {
+        public void is0or1(){
             List<int> test = DavidMath.Prime.distinctFactors(0);
             Assert.AreEqual(0, test.Count);
             test = DavidMath.Prime.distinctFactors(1);
@@ -16,15 +13,13 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
-        public void isNegative()
-        {
+        public void isNegative(){
             List<int> test = DavidMath.Prime.distinctFactors(-1);
             Assert.AreEqual(0, test.Count);
         }
 
         [TestMethod]
-        public void isAlreadyPrime()
-        {
+        public void isAlreadyPrime(){
             List<int> test = DavidMath.Prime.distinctFactors(2);
             Assert.AreEqual(1, test.Count);
             Assert.AreEqual(2, test[0]);
@@ -39,8 +34,7 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
-        public void isNormalCase()
-        {
+        public void isNormalCase(){
             List<int> test = DavidMath.Prime.distinctFactors(4);
             Assert.AreEqual(1, test.Count);
             Assert.IsTrue(test.Contains(2));
