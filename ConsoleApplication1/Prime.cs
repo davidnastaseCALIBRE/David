@@ -24,5 +24,14 @@
             }
             return !holder[a];
         }
+
+        public static bool isTwinPrime(int a)
+        {
+            if (isPrime(a))
+            {
+                return isPrime(a - 2) || isPrime(a + 2);
+            }
+            return false;
+        }
     }
 }
