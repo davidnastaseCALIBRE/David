@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace DavidMath
 {
@@ -57,8 +57,19 @@ namespace DavidMath
                     }
                 }
             }
-
             return holder;
+        }
+
+        public static List<int> distinctFactors(int a)
+        {
+            List<int> holder = primeFactors(a).Distinct().ToList();
+            return holder;
+        }
+
+        public static int numDistinctFactors(int a)
+        {
+            List<int> holder = primeFactors(a).Distinct().ToList();
+            return holder.Count;
         }
     }
 }
