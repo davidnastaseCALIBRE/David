@@ -55,6 +55,7 @@
     <Compile Include="PrimeTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FactorTest.cs" />
+    <Compile Include="TwinPrimeTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ConsoleApplication1\DavidMath.csproj">

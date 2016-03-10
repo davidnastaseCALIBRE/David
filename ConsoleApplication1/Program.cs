@@ -10,7 +10,16 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            DavidMath.Prime.primeFactors(14);
+            Console.WriteLine("Enter a number :");
+            int a = Int32.Parse(Console.ReadLine());
+            List<int> holder = DavidMath.Prime.primeFactors(a);
+
+            Console.WriteLine("The Prime Factors of " + a + " are:");
+
+            foreach (int x in holder)
+                Console.WriteLine(x);
+
+            Console.ReadKey();
         }
     }
 }
