@@ -68,8 +68,7 @@ namespace DavidMath
 
         public static int numDistinctFactors(int a)
         {
-            List<int> holder = primeFactors(a).Distinct().ToList();
-            return holder.Count;
+            return distinctFactors(a).Count;
         }
     }
 }
