@@ -6,7 +6,7 @@ namespace UnitTestProject1{
     [TestClass]
     public class BinarySearchTreeTest{
         [TestMethod]
-        public void ToStringTest(){
+        public void BSTToStringTest(){
             BinarySearchTree tester = new BinarySearchTree();
             Assert.AreEqual("", tester.ToString());
 
@@ -21,7 +21,7 @@ namespace UnitTestProject1{
         }
 
         [TestMethod]
-        public void OrderedListTest(){
+        public void BSTOrderedListTest(){
             BinarySearchTree tester = new BinarySearchTree();
             Assert.IsTrue(tester.OrderedList().Count == 0);
 
@@ -39,7 +39,7 @@ namespace UnitTestProject1{
         }
 
         [TestMethod]
-        public void ContainsTest(){
+        public void BSTContainsTest(){
             BinarySearchTree tester = new BinarySearchTree();
             Assert.IsFalse(tester.Contains(0));
             Assert.IsFalse(tester.Contains(1));
@@ -69,14 +69,14 @@ namespace UnitTestProject1{
         }
 
         [TestMethod]
-        public void AddTest() { // note, add has been extensively tested by the other tests so far.
+        public void BSTAddTest() { // note, add has been extensively tested by the other tests so far.
             BinarySearchTree tester = new BinarySearchTree();
             tester.Add(4);
             Assert.AreEqual("4", tester.ToString());
         }
 
         [TestMethod]
-        public void RemoveTest(){
+        public void BSTRemoveTest(){
             BinarySearchTree tester = new BinarySearchTree();
             tester.Remove(4); //let's remove from null. Let's hope for no exceptions
             Assert.IsFalse(tester.Contains(4));
