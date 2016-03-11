@@ -11,7 +11,7 @@ namespace DavidMath{
 
             Console.ReadKey();
 
-            List<int> holder = Prime.primeFactors(a);
+            List<int> holder = Prime.PrimeFactors(a);
 
             Console.WriteLine("The Prime Factors of " + a + " are:");
 
@@ -24,7 +24,7 @@ namespace DavidMath{
             a = Int32.Parse(Console.ReadLine());
             holder = new List<int>();
             for(int b = 0; b <= a; b++){
-                List<int> holderTemp = Collatz.collatzList(b);
+                List<int> holderTemp = Collatz.CollatzList(b);
                 if(holderTemp.Count > holder.Count){
                     holder = holderTemp;
                 }
