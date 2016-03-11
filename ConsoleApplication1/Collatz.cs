@@ -2,22 +2,22 @@
 
 namespace DavidMath{
     public class Collatz{
-        public static List<int> collatzList(int a){
+        public static List<int> CollatzList(int a){
             List<int> holder = new List<int>();
             if(a > 0){
                 holder.Add(a);
                 if(a != 1){
                     if(a % 2 == 0)
-                        holder.AddRange(collatzList(a/2));
+                        holder.AddRange(CollatzList(a/2));
                     else
-                        holder.AddRange(collatzList((a * 3) + 1));
+                        holder.AddRange(CollatzList((a * 3) + 1));
                 }
             }
             return holder;
         }
 
-        public static int collatzLength(int a){
-            return collatzList(a).Count;
+        public static int CollatzLength(int a){
+            return CollatzList(a).Count;
         }
     }
 }

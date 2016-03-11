@@ -11,38 +11,38 @@ namespace UnitTestProject1{
         */
         [TestMethod]
         public void CollatzListTest(){
-            Assert.AreEqual(1, DavidMath.Collatz.collatzList(1).Count);
-            Assert.AreEqual(2, DavidMath.Collatz.collatzList(2).Count);
-            Assert.AreEqual(8, DavidMath.Collatz.collatzList(3).Count);
-            Assert.AreEqual(3, DavidMath.Collatz.collatzList(4).Count);
+            Assert.AreEqual(1, DavidMath.Collatz.CollatzList(1).Count);
+            Assert.AreEqual(2, DavidMath.Collatz.CollatzList(2).Count);
+            Assert.AreEqual(8, DavidMath.Collatz.CollatzList(3).Count);
+            Assert.AreEqual(3, DavidMath.Collatz.CollatzList(4).Count);
         }
 
         [TestMethod]
         public void CollatzList0Test(){
-            Assert.AreEqual(0,DavidMath.Collatz.collatzList(0).Count);
+            Assert.AreEqual(0,DavidMath.Collatz.CollatzList(0).Count);
         }
 
         [TestMethod]
         public void CollatzListNegativeTest(){
-            Assert.AreEqual(0, DavidMath.Collatz.collatzList(-1).Count);
+            Assert.AreEqual(0, DavidMath.Collatz.CollatzList(-1).Count);
         }
 
         [TestMethod]
         public void CollatzLengthTest(){
-            Assert.AreEqual(1, DavidMath.Collatz.collatzLength(1));
-            Assert.AreEqual(2, DavidMath.Collatz.collatzLength(2));
-            Assert.AreEqual(8, DavidMath.Collatz.collatzLength(3));
-            Assert.AreEqual(3, DavidMath.Collatz.collatzLength(4));
+            Assert.AreEqual(1, DavidMath.Collatz.CollatzLength(1));
+            Assert.AreEqual(2, DavidMath.Collatz.CollatzLength(2));
+            Assert.AreEqual(8, DavidMath.Collatz.CollatzLength(3));
+            Assert.AreEqual(3, DavidMath.Collatz.CollatzLength(4));
         }
 
         [TestMethod]
         public void CollatzLength0Test(){
-            Assert.AreEqual(0, DavidMath.Collatz.collatzLength(0));
+            Assert.AreEqual(0, DavidMath.Collatz.CollatzLength(0));
         }
 
         [TestMethod]
         public void CollatzLengthNegativeTest(){
-            Assert.AreEqual(0, DavidMath.Collatz.collatzLength(-1));
+            Assert.AreEqual(0, DavidMath.Collatz.CollatzLength(-1));
         }
     }
 }
