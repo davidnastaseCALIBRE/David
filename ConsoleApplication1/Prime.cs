@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace DavidMath{
     public class Prime{
-        public static bool isPrime(int a){
+        public static bool IsPrime(int a){
             if (a < 2)
                 return false;
 
@@ -20,23 +20,22 @@ namespace DavidMath{
             return !holder[a];
         }
 
-        public static bool isTwinPrime(int a){
-            if (isPrime(a))
-                return isPrime(a - 2) || isPrime(a + 2);
-            
+        public static bool IsTwinPrime(int a){
+            if (IsPrime(a))
+                return IsPrime(a - 2) || IsPrime(a + 2);
             return false;
         }
 
-        public static List<int> primeFactors(int a){
+        public static List<int> PrimeFactors(int a){
             List<int> holder = new List<int>();
 
-            if (isPrime(a))
+            if (IsPrime(a))
                 holder.Add(a);
             else{
                 for(int x = 2; x < a; x++){
-                    if(a % x == 0 && isPrime(x)){
+                    if(a % x == 0 && IsPrime(x)){
                         holder.Add(x);
-                        holder.AddRange(primeFactors(a/ x));
+                        holder.AddRange(PrimeFactors(a/ x));
                         break; //only try to find the first factor, avoid duplicates.
                     }
                 }
@@ -44,13 +43,13 @@ namespace DavidMath{
             return holder;
         }
 
-        public static List<int> distinctFactors(int a){
-            List<int> holder = primeFactors(a).Distinct().ToList();
+        public static List<int> DistinctFactors(int a){
+            List<int> holder = PrimeFactors(a).Distinct().ToList();
             return holder;
         }
 
-        public static int numDistinctFactors(int a){
-            return distinctFactors(a).Count;
+        public static int NumDistinctFactors(int a){
+            return DistinctFactors(a).Count;
         }
     }
 }

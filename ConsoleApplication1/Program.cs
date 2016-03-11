@@ -6,7 +6,7 @@ namespace ConsoleApplication1{
         static void Main(string[] args){
             Console.WriteLine("Enter a number :");
             int a = Int32.Parse(Console.ReadLine());
-            List<int> holder = DavidMath.Prime.primeFactors(a);
+            List<int> holder = DavidMath.Prime.PrimeFactors(a);
 
             Console.WriteLine("The Prime Factors of " + a + " are:");
 
@@ -19,7 +19,7 @@ namespace ConsoleApplication1{
             a = Int32.Parse(Console.ReadLine());
             holder = new List<int>();
             for(int b = 0; b <= a; b++){
-                List<int> holderTemp = DavidMath.Collatz.collatzList(b);
+                List<int> holderTemp = DavidMath.Collatz.CollatzList(b);
                 if(holderTemp.Count > holder.Count){
                     holder = holderTemp;
                 }
