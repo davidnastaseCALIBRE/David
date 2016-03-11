@@ -54,9 +54,6 @@
   <ItemGroup>
     <Compile Include="PrimeTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TwinPrimeTest.cs" />
-    <Compile Include="NumDistinctFactorTest.cs" />
-    <Compile Include="DistinctFactorsTest.cs" />
     <Compile Include="CollatzTest.cs" />
     <Compile Include="BinarySearchTreeTest.cs" />
     <Compile Include="SinglyLinkedListTest.cs" />

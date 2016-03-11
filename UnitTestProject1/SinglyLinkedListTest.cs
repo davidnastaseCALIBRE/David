@@ -7,7 +7,7 @@ namespace UnitTestProject1{
     public class SinglyLinkedListTest
     {
         [TestMethod]
-        public void ContainsTest()
+        public void SLLContainsTest()
         {
             SinglyLinkedList test = new SinglyLinkedList();
             Assert.IsFalse(test.Contains(1));
@@ -24,7 +24,7 @@ namespace UnitTestProject1{
         }
 
         [TestMethod]
-        public void AddTest()
+        public void SLLAddTest()
         { //let's not reuse stuff from contains
             SinglyLinkedList test = new SinglyLinkedList();
             test.Add(1);
@@ -34,7 +34,7 @@ namespace UnitTestProject1{
         }
 
         [TestMethod]
-        public void RemoveTest()
+        public void SLLRemoveTest()
         {
             SinglyLinkedList test = new SinglyLinkedList();
             test.Remove(1); //hope no errors are thrown.
@@ -57,7 +57,7 @@ namespace UnitTestProject1{
         }
 
         [TestMethod]
-        public void ToStringTest()
+        public void SLLToStringTest()
         {
             SinglyLinkedList test = new SinglyLinkedList();
             Assert.AreEqual("", test.ToString());
@@ -73,7 +73,7 @@ namespace UnitTestProject1{
         }
 
         [TestMethod]
-        public void ReasonableListTest()
+        public void SLLReasonableListTest()
         {
             SinglyLinkedList test = new SinglyLinkedList();
             Assert.AreEqual(0, test.ReasonableList().Count);
