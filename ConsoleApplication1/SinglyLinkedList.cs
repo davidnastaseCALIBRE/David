@@ -1,45 +1,79 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 namespace DavidMath {
     public class SinglyLinkedList {
-        private node head;
+        private Node head;
 
-        public SinglyLinkedList() { }
+        public SinglyLinkedList() {}
 
-        public void add(int a){
-            if (head != null)
-                head.add(a);
-            else
-                head = new node(a, null);
+        public void Add(int a){
+            if (head == null)
+                head = new Node(a, null);
+            else{
+                if(head.value > a){
+                    Node newHead = new Node(a, head);
+                    head = newHead;
+                }else
+                    head.Add(a);
+            }
         }
 
-        public List<int> reasonableList(){
+        public override string ToString(){
+            return head.ToString();
+        }
+
+        public bool Contains(int a){
+            return head.Contains(a);
+        }
+
+        public List<int> ReasonableList(){
             if(head != null)
-                return head.reasonableList();
+                return head.ReasonableList();
             return new List<int>();
         }
-    }
 
-    class node{
-        private int value;
-        private node tail;
+        private class Node{
+            public int value { get; private set; }
+            private Node tail;
 
-        public node(int a, node b){
-            value = a;
-            tail = b;
-        }
+            public Node(int a, Node b){ 
+                value = a;
+                tail = b;
+            }
 
-        public void add(int a){
-            if (tail == null)
-                tail = new node(a, null);
-            tail.add(a);
-        }
+            public void Add(int a){
+                if (tail == null)
+                    tail = new Node(a, null);
+                if (tail.value > a){
+                    Node newTail = new Node(a, tail);
+                    tail = newTail;
+                }
+                else
+                    tail.Add(a);
+            }
 
-        public List<int> reasonableList(){
-            List<int> holder = new List<int>();
-            holder.Add(value);
-            if (tail != null)
-                holder.AddRange(tail.reasonableList());
-            return holder;
+            public bool Contains(int a){
+                if (value == a)
+                    return true;
+                if (tail != null)
+                    return tail.Contains(a);
+                return false;
+            }
+
+            public override string ToString(){
+                StringBuilder x = new StringBuilder();
+                x.Append(value);
+                x.Append(tail.ToString());
+                return x.ToString();
+            }
+
+            public List<int> ReasonableList(){
+                List<int> holder = new List<int>();
+                holder.Add(value);
+                if (tail != null)
+                    holder.AddRange(tail.ReasonableList());
+                return holder;
+            }
         }
     }
 }

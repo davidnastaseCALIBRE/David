@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 
 namespace DavidMath{
     public class BinarySearchTree{
@@ -9,19 +10,27 @@ namespace DavidMath{
             value = a;
         }
 
-        public bool contains(int a){
+        public bool Contains(int a){
             if (a > value && rightNode != null)
-                return rightNode.contains(a);
+                return rightNode.Contains(a);
             if (a < value && leftNode != null)
-                return leftNode.contains(a);
+                return leftNode.Contains(a);
             return value == a;
         }
 
-        public void add(int a){
-            if (a > value)
-                set(rightNode, a);
-            else if (a < value)
-                set(leftNode, a);
+        public void Add(int a){ //Does nothing if the BST already contains that value.
+            if (a > value){
+                if (rightNode == null)
+                    rightNode = new BinarySearchTree(a);
+                else
+                    rightNode.Add(a);
+            }
+            if (a < value){
+                if (rightNode == null)
+                    rightNode = new BinarySearchTree(a);
+                else
+                    rightNode.Add(a);
+            }
         }
 
         //Yussss recursion
@@ -36,11 +45,15 @@ namespace DavidMath{
             return holder;
         }
 
-        private void set(BinarySearchTree b, int a){
-            if (b == null)
-                b = new BinarySearchTree(a);
-            else
-                b.add(a);
+        public override string ToString(){
+            StringBuilder x = new StringBuilder();
+            if (leftNode != null)
+                x.Append(leftNode.ToString());
+            x.Append(value);
+            if (rightNode != null)
+                x.Append(rightNode.ToString());
+     
+            return x.ToString();
         }
     }
 }
