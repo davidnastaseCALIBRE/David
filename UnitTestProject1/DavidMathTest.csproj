@@ -57,6 +57,7 @@
     <Compile Include="CollatzTest.cs" />
     <Compile Include="BinarySearchTreeTest.cs" />
     <Compile Include="SinglyLinkedListTest.cs" />
+    <Compile Include="RecursionTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ConsoleApplication1\DavidMath.csproj">

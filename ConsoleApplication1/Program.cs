@@ -7,7 +7,7 @@ namespace DavidMath{
             Console.WriteLine("Enter a number :");
             int a = Int32.Parse(Console.ReadLine());
 
-            Console.WriteLine(Recursion.fibonacci(a));
+            Console.WriteLine(Recursion.Fibonacci(a));
 
             Console.ReadKey();
 
