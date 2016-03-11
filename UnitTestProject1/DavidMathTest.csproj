@@ -59,6 +59,7 @@
     <Compile Include="NumDistinctFactorTest.cs" />
     <Compile Include="DistinctFactorsTest.cs" />
     <Compile Include="CollatzTest.cs" />
+    <Compile Include="BinarySearchTreeTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ConsoleApplication1\DavidMath.csproj">
