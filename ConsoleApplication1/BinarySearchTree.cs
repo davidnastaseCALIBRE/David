@@ -102,14 +102,14 @@ namespace DavidMath{
             }
 
             private int LeftSuccessor(){
-                if (rightLeaf != null)
-                    return rightLeaf.LeftSuccessor();
+                if (leftLeaf != null)
+                    return leftLeaf.LeftSuccessor();
                 return value;
             }
 
             private int RightSuccessor(){
-                if (leftLeaf != null)
-                    return leftLeaf.LeftSuccessor();
+                if (rightLeaf != null)
+                    return rightLeaf.RightSuccessor();
                 return value;
             }
 

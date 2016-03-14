@@ -82,26 +82,46 @@ namespace UnitTestProject1{
             Assert.IsFalse(tester.Contains(4));
 
             tester.Add(4);
-            tester.Add(2);
-            tester.Add(3);
-            tester.Add(1);
-
-            tester.Remove(2);
-            Assert.IsFalse(tester.Contains(2)); //remove child node with two children.
-            Assert.AreEqual(3, tester.OrderedList().Count);
-
-            tester.Remove(3); //remove child with 1 child.
-            Assert.IsFalse(tester.Contains(3)); //remove child node with one child.
-            Assert.AreEqual(2, tester.OrderedList().Count);
-
             tester.Remove(4);
-            Assert.IsFalse(tester.Contains(4)); // remove head node with one child.
-            Assert.AreEqual(1, tester.OrderedList().Count);
+            Assert.IsFalse(tester.Contains(4));
 
+            tester.Add(8);
+
+            tester.Add(4);
+            tester.Add(6);
+            tester.Add(2);
+            tester.Add(1);
+            tester.Add(3);
+            tester.Add(5);
+            tester.Add(7);
+
+            tester.Add(12);
+            tester.Add(10);
+            tester.Add(14);
+            tester.Add(9);
+            tester.Add(11);
+            tester.Add(13);
+            tester.Add(15);
+
+
+            tester.Remove(15);
+            Assert.IsFalse(tester.Contains(15));
+            tester.Remove(15);
+            Assert.IsFalse(tester.Contains(15));
+
+            tester.Remove(13);
+            Assert.IsFalse(tester.Contains(13));
+            tester.Remove(12);
+            Assert.IsFalse(tester.Contains(12));
+            tester.Remove(7);
+            Assert.IsFalse(tester.Contains(7));
             tester.Remove(1);
-            Assert.IsFalse(tester.Contains(1)); // remove childless head node.
-            Assert.AreEqual(0, tester.OrderedList().Count);
+            Assert.IsFalse(tester.Contains(1));
+            tester.Remove(4);
+            Assert.IsFalse(tester.Contains(4));
 
+            tester.Remove(8);
+            Assert.IsFalse(tester.Contains(8));
         }
     }
 }

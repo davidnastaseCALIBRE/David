@@ -58,6 +58,7 @@
     <Compile Include="BinarySearchTreeTest.cs" />
     <Compile Include="SinglyLinkedListTest.cs" />
     <Compile Include="RecursionTest.cs" />
+    <Compile Include="ProgramTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ConsoleApplication1\DavidMath.csproj">
