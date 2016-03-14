@@ -70,10 +70,13 @@ namespace DavidMath {
             }
 
             public void Remove(int a){
-                if (tail.value == a)
-                    tail = tail.tail;
-                else
-                    tail.Remove(a);
+                if(tail != null)
+                {
+                    if (tail.value == a)
+                        tail = tail.tail;
+                    else
+                        tail.Remove(a);
+                }
             }
 
             public bool Contains(int a){

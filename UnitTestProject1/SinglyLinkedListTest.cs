@@ -31,6 +31,9 @@ namespace UnitTestProject1{
             test.Add(1);
             Assert.IsTrue(test.Contains(1));
             Assert.AreEqual(1, test.ReasonableList().Count);
+
+            test.Add(0); //-head should be replaced with the lower number.
+            Assert.AreEqual("01", test.ToString());
         }
 
         [TestMethod]
@@ -42,18 +45,24 @@ namespace UnitTestProject1{
             test.Add(1);
             test.Add(2);
             test.Add(3);
+            test.Add(4);
+            test.Add(5);
+
+            test.Remove(5);
+            Assert.IsFalse(test.Contains(5));
+            Assert.AreEqual(4, test.ReasonableList().Count);
 
             test.Remove(1);
             Assert.IsFalse(test.Contains(1));
-            Assert.AreEqual(2, test.ReasonableList().Count);
+            Assert.AreEqual(3, test.ReasonableList().Count);
 
             test.Remove(3);
             Assert.IsFalse(test.Contains(3));
-            Assert.AreEqual(1, test.ReasonableList().Count);
+            Assert.AreEqual(2, test.ReasonableList().Count);
 
             test.Remove(2);
-            Assert.IsFalse(test.Contains(0));
-            Assert.AreEqual(0, test.ReasonableList().Count);
+            Assert.IsFalse(test.Contains(2));
+            Assert.AreEqual(1, test.ReasonableList().Count);
         }
 
         [TestMethod]
